@@ -1,0 +1,41 @@
+{
+  "name": "drive-ease-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.18",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.1.18",
+    "@nestjs/platform-express": "^11.1.18",
+    "@prisma/client": "^5.20.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.19",
+    "@nestjs/schematics": "^11.0.10",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.7.4",
+    "eslint": "^9.11.1",
+    "prettier": "^3.3.3",
+    "prisma": "^5.20.0",
+    "source-map-support": "^0.5.21",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2"
+  }
+}
