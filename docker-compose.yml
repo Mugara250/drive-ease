@@ -58,7 +58,7 @@ services:
     volumes:
       - ./frontend:/app
       - frontend_node_modules:/app/node_modules
-    command: sh -c "npm install --ignore-scripts && npm run dev -- --host 0.0.0.0 --port 5173"
+    command: sh -c "npm install --ignore-scripts --include=optional && npm install @rollup/rollup-linux-x64-musl --no-save && npm run dev -- --host 0.0.0.0 --port 5173"
     depends_on:
       - backend
 
