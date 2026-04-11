@@ -3,13 +3,13 @@ import {
   Navigate,
   RouterProvider,
 } from 'react-router-dom';
-import Layout from './layouts/Layout';
 import LandingPage from './pages/LandingPage';
+import MainLayout from './layouts/MainLayout';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <MainLayout />,
     children: [
       { index: true, element: <LandingPage /> },
       { path: '*', element: <Navigate to="/" replace /> },
