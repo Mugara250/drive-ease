@@ -14,8 +14,5 @@
     "docker:up": "docker compose up --build",
     "docker:down": "docker compose down",
     "docker:reset-deps": "docker compose down && docker volume rm drive-ease_backend_node_modules drive-ease_frontend_node_modules || true && docker compose up -d --build backend frontend"
-  },
-  "dependencies": {
-    "react-router-dom": "^7.14.0"
   }
 }
