@@ -1,11 +1,11 @@
 # Drive Ease - Full-Stack Setup
 
-Production-ready development setup for a car rental platform with:
+Development setup for a car rental platform with:
 
 - Frontend: React + TypeScript + Tailwind CSS (Vite)
 - Backend: NestJS + TypeScript
 - Database: PostgreSQL
-- Orchestration: Docker Compose
+- Orchestration: Docker Compose (database only)
 
 No business/domain logic is included by design.
 
@@ -15,12 +15,10 @@ No business/domain logic is included by design.
 .
 ├── backend/
 │   ├── src/
-│   ├── Dockerfile
 │   ├── package.json
 │   └── ...
 ├── frontend/
 │   ├── src/
-│   ├── Dockerfile
 │   ├── package.json
 │   └── ...
 ├── .env.example
@@ -38,22 +36,20 @@ cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
 ```
 
-## 2) Run With Docker Compose
+## 2) Run Database In Docker
 
 ```bash
-docker compose up --build
+npm run db:up
 ```
 
 Services:
 
-- Frontend: http://localhost:5173
-- Backend: http://localhost:3000
 - PostgreSQL: localhost:5432
 
-Stop services:
+Stop database:
 
 ```bash
-docker compose down
+npm run db:down
 ```
 
 Remove volumes (including database data):
@@ -74,15 +70,13 @@ cd ../backend && npm install
 Start backend:
 
 ```bash
-cd backend
-npm run start:dev
+npm run dev:backend
 ```
 
 Start frontend:
 
 ```bash
-cd frontend
-npm run dev
+npm run dev:frontend
 ```
 
 ## Notes
@@ -90,4 +84,3 @@ npm run dev
 - Backend CORS is configured for frontend dev origin.
 - Backend uses `@nestjs/config` and Prisma setup placeholders for PostgreSQL.
 - Frontend uses Tailwind CSS integrated through PostCSS.
-- Dockerfiles include multi-stage targets suitable for development and production evolution.
