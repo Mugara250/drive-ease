@@ -8,7 +8,6 @@ const Landing = () => {
         src={carBackgroundImage}
         className="absolute w-full h-full object-cover object-center"
       />
-
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative text-white h-full">
